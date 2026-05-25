@@ -1,6 +1,7 @@
 package server
 
 import (
+	"fmt"
 	"log"
 
 	"xprinter/internal/handlers"
@@ -9,6 +10,11 @@ import (
 )
 
 func Run() {
+	fmt.Println("-------------------------")
+	fmt.Println(" XPrinter Server v.1.0.0 ")
+	fmt.Println("-------------------------")
+	fmt.Println("")
+
 	gin.SetMode(gin.ReleaseMode)
 	engine := gin.Default()
 
