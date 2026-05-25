@@ -5,6 +5,11 @@ if [ "$EUID" -ne 0 ]; then
   exit 1
 fi
 
+echo "Stopping current service if exists..."
+systemctl stop xprinter
+if [ $? -ne 0 ]; then
+fi
+
 echo "Creating directory..."
 mkdir -p /opt/xprinter
 if [ $? -ne 0 ]; then

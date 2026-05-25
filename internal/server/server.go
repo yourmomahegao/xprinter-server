@@ -18,6 +18,7 @@ func Run() {
 	gin.SetMode(gin.ReleaseMode)
 	engine := gin.Default()
 
+	engine.GET("/", handlers.Index)
 	engine.GET("api/get_printers/", handlers.GetPrinters)
 	engine.POST("api/print/", handlers.Print)
 
