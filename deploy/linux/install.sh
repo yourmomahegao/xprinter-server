@@ -7,8 +7,6 @@ fi
 
 echo "Stopping current service if exists..."
 systemctl stop xprinter
-if [ $? -ne 0 ]; then
-fi
 
 echo "Creating directory..."
 mkdir -p /opt/xprinter
