@@ -11,7 +11,7 @@ import (
 
 func Run() {
 	fmt.Println("-------------------------")
-	fmt.Println(" XPrinter Server v.1.0.0 ")
+	fmt.Println(" XPrinter Server v.1.0.1 ")
 	fmt.Println("-------------------------")
 	fmt.Println("")
 
