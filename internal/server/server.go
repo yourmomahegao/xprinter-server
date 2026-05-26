@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 
+	"xprinter/internal/config"
 	"xprinter/internal/handlers"
 	"xprinter/internal/middleware"
 
@@ -12,7 +13,7 @@ import (
 
 func Run() {
 	fmt.Println("-------------------------")
-	fmt.Println(" XPrinter Server v.1.0.2 ")
+	fmt.Printf(" XPrinter Server v.%s \n\r", config.VERSION)
 	fmt.Println("-------------------------")
 	fmt.Println("")
 
@@ -21,7 +22,8 @@ func Run() {
 	engine.Use(middleware.CORSMiddleware())
 
 	engine.GET("/", handlers.Index)
-	engine.GET("api/get_printers/", handlers.GetPrinters)
+	engine.GET("api/version/", handlers.Version)
+	engine.GET("api/printers/", handlers.GetPrinters)
 	engine.POST("api/print/", handlers.Print)
 
 	if err := engine.Run(":12011"); err != nil {
